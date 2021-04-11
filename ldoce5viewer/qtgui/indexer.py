@@ -10,12 +10,11 @@ try:
     import cPickle as pickle
 except:
     import pickle
-from cgi import escape
+from html import escape
 from struct import Struct
 import traceback
 
 from PyQt5.QtCore import *
-from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import lxml.etree as et
 

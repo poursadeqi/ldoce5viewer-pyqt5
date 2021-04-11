@@ -7,9 +7,9 @@ _SINGLEAPP_KEY = 'ed437af1-0388-4e13-90e9-486bdc88c77a'
 from .. import __author__
 
 # use PyQt API v2
-import sip
-sip.setapi('QString', 2)
-sip.setapi('QVariant', 2)
+#import sip
+#sip.setapi('QString', 2)
+#sip.setapi('QVariant', 2)
 
 import sys
 from optparse import OptionParser
@@ -35,8 +35,9 @@ if not hasattr(QLineEdit, 'setPlaceholderText'):
 try:
     from . import ui
     from . import resources
-except ImportError:
+except ImportError as err:
     print("need to run '$ make' in order for the program to work")
+    print(err)
     exit()
 
 

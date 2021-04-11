@@ -9,9 +9,9 @@ import os.path
 import traceback
 
 from PyQt5.QtCore import (
-    Qt, Q_ARG, QMetaObject, QIODevice, QTimer,)
+    Qt, Q_ARG, QMetaObject, QIODevice, QTimer, )
 from PyQt5.QtNetwork import (
-    QNetworkAccessManager, QNetworkReply, QNetworkRequest,)
+    QNetworkAccessManager, QNetworkReply, QNetworkRequest, )
 
 from .. import __version__
 from .. import __name__ as basepkgname
@@ -181,6 +181,9 @@ class MyNetworkReply(QNetworkReply):
 
     def isFinished(self):
         return self._finished
+
+    def on_data(self, data):
+        pass
 
     def isSequential(self):
         return True
